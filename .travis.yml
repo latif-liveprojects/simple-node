@@ -1,7 +1,7 @@
 
 after_success: 
   - "echo \"$DOCKER_PASSWORD\" | docker login -u \"$DOCKER_USERNAME\" --password-stdin"
-  - "docker push YOUR_DOCKER_HUB/simple-node"
+  - "docker push latifdev/simple-node"
 before_script: 
   - "echo \"no tests\""
 install: 
@@ -12,6 +12,6 @@ node_js:
 script: 
   - "docker --version"
   - "docker build -t simple-node ."
-  - "docker tag simple-node YOUR_DOCKER_HUB/simple-node:latest"
+  - "docker tag simple-node latifdev/simple-node:latest"
 services: 
   - docker
