@@ -6,6 +6,8 @@ services:
   - docker
 
 # Pre-testing installs
+- echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+- echo 'credentials configured'
 install:
   - echo "nothing needs to be installed"
 
@@ -19,5 +21,5 @@ script:
   - docker tag simple-node latifdev/simple-node:latest
 
 after_success:
-  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+  
   - docker push latifdev/simple-node
