@@ -7,7 +7,7 @@ services:
 
 # Pre-testing installs
 - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
-- echo 'credentials configured'
+
 install:
   - echo "nothing needs to be installed"
 
